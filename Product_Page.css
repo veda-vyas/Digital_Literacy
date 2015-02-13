@@ -1,0 +1,32 @@
+body{
+	background-color: #EAE5E4;
+	font-family: "Whitney SSm A","Whitney SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+}
+h1{
+	color: white;
+	padding-left: 20%;
+	font-family: monospace;
+	margin-top: 17px;
+}
+.header{
+	background-color: rgb(25, 167, 229);
+	width: 1575px;
+	height: 65px;
+}
+.main{
+/*	background-color: rgb(94, 94, 94);*/
+	background-color: white;
+	width: 970px;
+	margin-top: 8%;
+	border-radius: 15px;
+}
+img{
+	margin-left: 20%;
+	margin-top: 10%;
+}
+li{
+	display: inline-block;
+	text-decoration: none;
+	padding: 2%;;
+}

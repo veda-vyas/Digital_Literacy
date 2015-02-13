@@ -1,0 +1,158 @@
+li{
+	display: inline-block;
+	text-decoration: none;
+	padding: 2%;
+	text-align: right;
+	margin-top: 2.5%;
+}
+.hifi{
+	padding-bottom: none;
+}
+.happy{
+	display: inline;
+	color: white;
+}
+.sad{
+	padding-left: 10%;
+}
+.lkj{
+	font-weight: 700;
+	font-size: 16px;
+}
+.hmm{
+	padding-right: 10%;
+	padding-left: 5%;
+}
+.mhh{
+	margin-right: 5%;
+}
+.veda{
+	float: right;
+	display: flex;
+	margin-left: 2%;
+}
+body{
+	background-color: #EAE5E4;
+	}
+.hitler{
+	padding-top: 4%;
+	font-size: 200%;
+	margin-left: 3%
+}
+.stfu{
+	color: #999;
+	font-size: 17px;
+}
+.mee{
+	font-weight: 500;
+	color: #3c3c3c;
+}
+.heyo{
+	padding-bottom: 2%;
+}
+.nazi{
+	padding: 4%;
+	height: 15%;
+}
+p{
+	display: inline-block;
+}
+.german{
+	display: inline-block;
+}
+.nepal{
+	border: solid;
+	border-radius: 5%;
+	border-color: rgb(242, 242, 242);
+	border-style: solid;
+	border-bottom-style: outset;
+	margin:1.1%;
+}
+.akram{
+	background-color: #dbdbdb;
+	padding: 2%;
+	border-radius: 10px;
+}
+.myButton {
+	background-color:#94B805;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px #c0c0c0;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-family:arial;
+	font-size:17px;
+	padding:2% 11%;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2b665e;
+}
+.myButton:hover {
+	background-color:#c0c0c0;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.myButton1 {
+	background-color:white;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px #c0c0c0;
+	display:inline-block;
+	cursor:pointer;
+	color:rgb(25, 167, 229);
+	font-family:arial;
+	font-size:17px;
+	padding:2% 6%;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2b665e;
+}
+.myButton1:hover {
+	background-color:#c0c0c0;
+}
+.myButton1:active {
+	position:relative;
+	top:1px;
+}
+h1{
+	font-style: inherit;
+	font-family: museo-sans-rounded, sans-serif;
+	font-size: 35px;
+}
+.arrow_box {
+	position: relative;
+	background: white;
+	border: 4px;
+	border-radius: 5%;
+}
+.arrow_box:after, .arrow_box:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-right-color: white;
+	border-width: 30px;
+	margin-top: -30px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-right-color: black;
+	border-width: 36px;
+	margin-top: -36px;
+}
+video {
+	padding-top: 2%;
+	padding-left: 8%;
+	padding-right: 8%
+}

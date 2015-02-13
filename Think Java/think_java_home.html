@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-compiatable" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="java.ico" type="image/ico" sizes="16x16">
+		<title>Think Java</title> <!-- Should be updated based on the Module name in the JSON file -->
+		<link rel="stylesheet" type="text/css" href="myst.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="bootstrap.js"></script>
+	</head>
+	
+	<body>
+				 <!-- container for navigation bar -->
+		<header>
+			<div class="containerhurray">
+				<div class="row ">
+					<div class="col-md-6" style="display:flex; padding-left:50px; padding-top:15px; padding-bottom:10px;">
+<!-- 						<ul class="happy">
+							<li class="lkj"><a style="color:white">Home</a></li>
+							<li class="lkj"><a style="color:white">Discussion</a></li>
+							<li class="lkj"><a style="color:white">Immersion</a></li>
+						</ul> -->
+						<!-- Should be updated based on the Module name in the JSON file -->
+						<h1 style="padding-left:20%; color: white">Think Java</h1>
+					<select id="module_dropdown" class="myButton1">
+						<option value="Module Catalogue">Modules</option>
+					</select>
+					</div>
+					<br>
+					<!-- Sign in and Sign up Buttons -->
+					<div class="col-md-6 text-right hmm" style="padding-bottom:15px">
+						<!-- sign in button -->
+						<a type="button" class="btn btn-primary btn-lg myButton1"
+						data-toggle="modal" data-target="#myModal" style="margin-right:5px; margin-left:50px;">
+							Sign In
+						</a>
+						<!-- Sign In Modal on clicking the button -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  							<div class="modal-dialog">
+    							<div class="modal-content">
+      								<div class="modal-header">
+        								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        									<span aria-hidden="true">&times;</span>
+        								</button>
+        								<h1 class="modal-title" id="myModalLabel" style="text-align:center">Sign In</h1>
+      								</div>
+      								<div class="modal-body">
+        								<form class="form-horizontal">
+	  										<div class="form-group">
+	    										<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+	    										<div class="col-sm-10">
+	      											<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+	    										</div>
+	  										</div>
+	  										<div class="form-group">
+	    										<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+	    										<div class="col-sm-10">
+	      											<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+	    										</div>
+	  										</div>
+	  										<div class="form-group">
+	    										<div class="col-sm-offset-2 col-sm-10">
+	      											<div class="checkbox">
+	        											<label><input type="checkbox"> Remember me </label>
+	        										</div>
+	        									</div>
+	        								</div>
+        								</form>
+        							</div>
+        							<div class="modal-footer">
+        								<div class="form-group">
+    										<div class="col-sm-offset-2 col-sm-10">
+      											<button type="submit" class="btn btn-primary">Sign in</button>
+    										</div>
+  										</div>
+  									</div>
+    							</div>
+  							</div>
+						</div>
+
+						<!-- sign up button -->
+						<a type="button" class="btn btn-primary btn-lg myButton1" data-toggle="modal" data-target="#myModal1">
+							Sign Up
+						</a>
+					<!-- Modal -->
+						<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  							<div class="modal-dialog">
+    							<div class="modal-content">
+     								 <div class="modal-header">
+        								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        								<h1 class="modal-title" id="myModalLabel" style="text-align:center">Sign Up</h1>
+      								</div>
+		  							<div class="modal-body">
+		    							<form class="form-inline">
+											<div class="form-group">
+												<label for="exampleInputName2">First Name</label>
+												<input type="text" class="form-control" id="exampleInputName2" placeholder="First Name">
+											</div>
+											<div class="form-group">
+	    										<label for="exampleInputName2">Last Name</label>
+	    										<input type="text" class="form-control" id="exampleInputName2" placeholder="Last Name">
+	  										</div>
+										</form>
+										<br>
+										<form class="form-horizontal">
+  											<div class="form-group">
+    											<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    											<div class="col-sm-10">
+      												<input type="email" class="form-control" id="inputEmail3" placeholder="Enter Your Email Address">
+    											</div>
+  											</div>
+  											<div class="form-group">
+   												<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    											<div class="col-sm-10">
+      												<input type="password" class="form-control" id="inputPassword3" placeholder="Enter New Password">
+    											</div>
+  											</div>
+   											<div class="form-group">
+    											<label for="inputPassword3" class="col-sm-2 control-label">Re-Enter Password</label>
+    											<div class="col-sm-10">
+      												<input type="password" class="form-control" id="inputPassword3" placeholder="Re-Enter New Password">
+    											</div>
+  											</div>
+										</form>
+      								</div>
+     								<div class="modal-footer">
+         								<div class="form-group">
+    										<div class="col-sm-offset-2 col-sm-10">
+     	 										<button type="submit" class="btn btn-primary">Sign Up</button>
+    										</div>
+     	 								</div>
+   	 								</div>
+ 	 							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</header>
+		<br>
+		<br>
+		
+		<!-- eModule container -->
+		<div id="div" class="container" style="margin-bottom:60px" position="absolute">
+			
+			<!--Row for progress bar header of eModule container-->
+			<div class="row hifi">
+				<div class="col-md-6">
+					<ul id="progress_bar" style="margin-top: 10px; width:455px;">
+						<li id="list" style="background-color: #7eb530; width:35px; border-radius: 100px;border-bottom-right-radius: 0px;border-top-right-radius: 0px;padding-top: 15px;"></li>
+					</ul>
+				</div>
+				<div class="col-md-6 text-right"></div>
+			</div>
+			
+			<!-- Row which displays a single solid line after preogress bar row -->
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
+			</div>
+			
+			<!-- Row which displays computer image along with some content -->
+ 			<div class="row" style="padding-bottom:25px">
+ 				
+ 				<!-- Div tag which displays computer image -->
+ 				<div class="col-md-5">
+ 					<img class="nazi img-responsive" src="happycomputer1.jpg" alt="techy" height="750px" width="750px" style="height:400px">
+ 				</div>
+ 				<!-- Content box, where required data is parsed from JSON -->
+ 				<div id="contentbox" class="col-md-7">
+ 					<div class="arrow_box">
+ 						<h2 style="text-align:center">Welcome to Digital Literacy</h2>
+ 						<p style="text-align:center" class="stfu">I'm Techy and i'll give you a quick intro on how to learn with Digital Litercy</p>
+ 					</div>
+ 					<video width="100%" controls>
+  						<source src="video.mp4" type="video/mp4">
+ 						<source src="mov_bbb.ogg" type="video/ogg">
+	 					Your browser does not support HTML5 video.
+ 			 		</video>
+ 				</div>
+ 			</div>
+ 			
+			<!-- Footer bar or last row in main container which displays continue and previous buttons -->
+			<div class="row akram">
+				<div id="previousbutton" class="col-md-6">
+<!-- 				<button id="previous" type="submit" class="myButton">Previous</button> -->
+				</div>
+				<div id="continuebutton" class="col-md-6 text-right">
+					<button id="continue" type="submit" class="myButton">Continue</button>
+				</div>
+			</div>
+		</div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	var text = '{"name": "Think Java", "modules": ["The way of the program", "Variables and types", "Void methods", "Conditionals and recursion", "Value methods", "Iteration and loops", "Strings and things", "Mutable objects", "Create your own objects", "Arrays", "Arrays of Objects", "Objects of Arrays", "Object-oriented programming"]}'
+	var object = $.parseJSON(text);
+	$.each(object.modules, function(index, value){
+		$('#module_dropdown').append($('<option value="'+value+'">'+value+'</option>'))
+	});
+});
+
+var e = 1;
+$("#continue").click(function(){
+	if (e>=1){
+e++;
+	$('#contentbox').html('<button id="slide' +e+ '" type="submit" style="margin:30%" class="myButton">Slide '+e+'</button>')
+	$('#progress_bar').append($('<li id="list'+e+'"style="background-color: #7eb530; width:35px; border-bottom-right-radius: 0px;border-top-right-radius: 0px;padding-top: 15px;"></li><li style="padding-right: 2px;padding-left: 2px;"></li>'))
+	$(this).html($('<button id="continue" type="submit" class="myButton '+e+'">Continue</button>'))
+	$('#previousbutton').html($('<button id="previous" type="submit" class="myButton '+(e+10)+'">Previous</button>'))
+	$('button.'+(e+10)).click(function(){
+		$('#list'+e).remove()
+		$('#contentbox').html('<button id="slide' +(e-1)+ '" type="submit" style="margin:30%" class="myButton">Slide '+(e-1)+'</button>')
+		if (e==2){
+			$(this).html($('<a href="digital_literacy_home.html" class="myButton">Home</a>'))
+		}
+		if (e<=10){
+			e--;
+			$('#contentbox').html('<button id="slide' +e+ '" type="submit" style="margin:30%" class="myButton">Slide '+e+'</button>')
+		}
+	});
+}
+if (e>=10){
+ $('#continue').replaceWith($('<button id="continue" type="submit" class="myButton '+e+'" disabled="disabled">End</button>'))
+ $('#list'+e).replaceWith($('<li id="list'+e+'"style="background-color: #7eb530; width:35px; border-bottom-right-radius: 100px;border-top-right-radius: 100px;padding-top: 15px;"></li><li style="padding-right: 2px;padding-left: 2px;"></li>'))
+	}
+});
+</script>
+	</body>
+</html>

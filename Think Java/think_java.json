@@ -1,0 +1,18 @@
+{
+	"name": "Think Java",
+	"modules": [
+		{"name" : "The way of the program", "slides" : ["What is a programming language?", "What is a program?", "What is debugging?", "Formal and natural languages", "The first program"]}, "slides" : []}
+		{"name" : "Variables and types", "slides" : []}
+		{"name" : "Void methods", "slides" : []}
+		{"name" : "Conditionals and recursion", "slides" : []}
+		{"name" : "Value methods", "slides" : []}
+		{"name" : "Iteration and loops", "slides" : []}
+		{"name" : "Strings and things", "slides" : []}
+		{"name" : "Mutable objects", "slides" : []}
+		{"name" : "Create your own objects", "slides" : []}
+		{"name" : "Arrays", "slides" : []}
+		{"name" : "Arrays of Objects", "slides" : []}
+		{"name" : "Objects of Arrays", "slides" : []}
+		{"name" : "Object-oriented programming", "slides" : []}
+	]
+}
