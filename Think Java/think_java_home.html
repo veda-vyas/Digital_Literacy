@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -25,8 +26,8 @@
 						</ul> -->
 						<!-- Should be updated based on the Module name in the JSON file -->
 						<h1 style="padding-left:20%; color: white">Think Java</h1>
-					<select id="module_dropdown" class="myButton1">
-						<option value="Module Catalogue">Modules</option>
+					<select id="module_dropdown" class="myButton1" style="margin-left:30px">
+						<!-- <option value="Module Catalogue">Modules</option> -->
 					</select>
 					</div>
 					<br>
@@ -195,40 +196,67 @@
 		</div>
 
 <script type="text/javascript">
+// JSON data
+	var text = '{"name": "Think Java", "modules": [{"name" : "The way of the program", "slides" : ["What is a programming language?", "What is a program?", "What is debugging?", "Formal and natural languages", "The first program"]}, {"name" : "Variables and types", "slides" : ["More printing", "Variables", "Assignment", "Printing variables", "Keywords", "Operators", "Order of operations", "Operators for Strings", "Composition"]}, {"name" : "Void methods", "slides" : []}, {"name" : "Conditionals and recursion", "slides" : []}, {"name" : "Value methods", "slides" : []}, {"name" : "Iteration and loops", "slides" : []}, {"name" : "Strings and things", "slides" : []}, {"name" : "Mutable objects", "slides" : []}, {"name" : "Create your own objects", "slides" : []}, {"name" : "Arrays", "slides" : []}, {"name" : "Arrays of Objects", "slides" : []}, {"name" : "Objects of Arrays", "slides" : []}, {"name" : "Object-oriented programming", "slides" : []} ] }'
 
+		// Parsing JSON
+		var object = $.parseJSON(text);
+
+// Dynamically generating module dropdown values
 $(document).ready(function(){
-	var text = '{"name": "Think Java", "modules": ["The way of the program", "Variables and types", "Void methods", "Conditionals and recursion", "Value methods", "Iteration and loops", "Strings and things", "Mutable objects", "Create your own objects", "Arrays", "Arrays of Objects", "Objects of Arrays", "Object-oriented programming"]}'
-	var object = $.parseJSON(text);
 	$.each(object.modules, function(index, value){
-		$('#module_dropdown').append($('<option value="'+value+'">'+value+'</option>'))
+		$('#module_dropdown').append($('<option value="'+ index +'">'+value.name+'</option>'))
+	});
+});
+	$('#module_dropdown').load(function(){
+		generate();
+	});
+// Function to define what happens when user select each module
+$("#module_dropdown").change(function generate(){
+	console.log("selected in dynamic_container: " + $("#module_dropdown").val());
+	var value = object.modules[$("#module_dropdown").val()].slides.length;
+	var index = object.modules[$("#module_dropdown").val()].slides;
+
+	// creating a variable which defines how many slides should be present in each module.
+	var e = 0;
+
+	// onclick function for continue button
+	$("#continue").click(function(){
+		// if (e>=0){
+	e++;
+
+		// dynamic generation of progressbar, content and footer buttons
+		$('#contentbox').html('<button id="slide' +e+ '" type="submit" style="margin:30%" class="myButton">'+index[e-1]+'</button>')
+		$('#progress_bar').append($('<li id="list'+e+'"style="background-color: #7eb530; width:35px; border-bottom-right-radius: 0px;border-top-right-radius: 0px;padding-top: 15px;"></li><li style="padding-right: 2px;padding-left: 2px;"></li>'))
+		$(this).html($('<button id="continue" type="submit" class="myButton '+e+'">Continue</button>'))
+
+		// Generating Previous button
+		$('#previousbutton').html($('<button id="previous" type="submit" class="myButton '+(e+value)+'">Previous</button>'))
+
+		// onclick function for previous button
+		$('button.'+(e+value)).click(function(){
+			$('#list'+e).remove()
+			$('#contentbox').html('<button id="slide' +(e-1)+ '" type="submit" style="margin:30%" class="myButton">'+index[e-2]+'</button>')
+			if (e==2){
+				$(this).html($('<a href="file:///F:/Desktop/WEB%20DESIGNING/toplist/Digital%20Literacy/Think%20Java/think_java_home.html" class="myButton">Home</a>'))
+			}
+			if (e<=value){
+				e--;
+				$('#contentbox').html('<button id="slide' +e+ '" type="submit" style="margin:30%" class="myButton">'+index[e-1]+'</button>')
+			}
+		});
+	// }
+	// Generating Next Slide button
+	if (e>=value){
+	 $('#continue').replaceWith($('<button id="continueEnd" type="submit" class="myButton '+e+'">Next Module</button>'))
+	 	$('#continueEnd').click(function(){
+		location.reload();
+});
+	 $('#list'+e).replaceWith($('<li id="list'+e+'"style="background-color: #7eb530; width:35px; border-bottom-right-radius: 100px;border-top-right-radius: 100px;padding-top: 15px;"></li><li style="padding-right: 2px;padding-left: 2px;"></li>'))
+		}
 	});
 });
 
-var e = 1;
-$("#continue").click(function(){
-	if (e>=1){
-e++;
-	$('#contentbox').html('<button id="slide' +e+ '" type="submit" style="margin:30%" class="myButton">Slide '+e+'</button>')
-	$('#progress_bar').append($('<li id="list'+e+'"style="background-color: #7eb530; width:35px; border-bottom-right-radius: 0px;border-top-right-radius: 0px;padding-top: 15px;"></li><li style="padding-right: 2px;padding-left: 2px;"></li>'))
-	$(this).html($('<button id="continue" type="submit" class="myButton '+e+'">Continue</button>'))
-	$('#previousbutton').html($('<button id="previous" type="submit" class="myButton '+(e+10)+'">Previous</button>'))
-	$('button.'+(e+10)).click(function(){
-		$('#list'+e).remove()
-		$('#contentbox').html('<button id="slide' +(e-1)+ '" type="submit" style="margin:30%" class="myButton">Slide '+(e-1)+'</button>')
-		if (e==2){
-			$(this).html($('<a href="digital_literacy_home.html" class="myButton">Home</a>'))
-		}
-		if (e<=10){
-			e--;
-			$('#contentbox').html('<button id="slide' +e+ '" type="submit" style="margin:30%" class="myButton">Slide '+e+'</button>')
-		}
-	});
-}
-if (e>=10){
- $('#continue').replaceWith($('<button id="continue" type="submit" class="myButton '+e+'" disabled="disabled">End</button>'))
- $('#list'+e).replaceWith($('<li id="list'+e+'"style="background-color: #7eb530; width:35px; border-bottom-right-radius: 100px;border-top-right-radius: 100px;padding-top: 15px;"></li><li style="padding-right: 2px;padding-left: 2px;"></li>'))
-	}
-});
 </script>
 	</body>
 </html>
